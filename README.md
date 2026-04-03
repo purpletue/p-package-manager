@@ -4,9 +4,9 @@
 
 ---
 
-## What's new?
+## Supported systems
 
-- Added support for apt/Debian, dnf/RHEL, zypper/openSUSE, and homebrew/MacOS systems.
+- apt/Debian, dnf/RHEL, zypper/openSUSE, and homebrew/MacOS systems.
 
 ---
 
@@ -94,7 +94,7 @@ p -h                   # Show help
 ## Notes
 
 - `-u` ignores any additional arguments (it always runs a full system upgrade)
-- `-ai/ar/as` requires `yay` to be installed on Arch-based systems (of cask on homebrew). Install it with:
+- `-ai/ar/as` requires `yay` to be installed on Arch-based systems (or cask on homebrew). Install it with:
   ```bash
   git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
   ```
