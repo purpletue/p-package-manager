@@ -1,4 +1,4 @@
-# p — Package Manager Wrapper for Arch Linux
+# P — Package Manager Wrapper for Linux
 
 `p` is a minimal zsh function that wraps `pacman`, `apt`, `dnf`, `zypper` and `brew` into a single, fast command. No more typing `sudo pacman -S` or forgetting flags — just `p`.
 
