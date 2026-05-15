@@ -77,56 +77,56 @@ p() {
         -i)
             shift
             case "$_PM" in
-                pacman) ascii && sudo pacman -S --noconfirm "$@";;
-                apt)    ascii && sudo apt install -y "$@";;
-                dnf)    ascii && sudo dnf install -y "$@";;
-                zypper) ascii && sudo zypper install -y "$@";;
-                brew)   ascii && brew install "$@";;
-                xbps)   ascii && sudo xbps-install -Sy "$@";;
-                apk)    ascii && sudo apk add "$@";;
-                pkg)    ascii && sudo pkg install -y "$@";;
-                pkg_add)ascii && sudo pkg_add -v "$@";;
+                pacman)  ascii && sudo pacman -S --noconfirm "$@";;
+                apt)     ascii && sudo apt install -y "$@";;
+                dnf)     ascii && sudo dnf install -y "$@";;
+                zypper)  ascii && sudo zypper install -y "$@";;
+                brew)    ascii && brew install "$@";;
+                xbps)    ascii && sudo xbps-install -Sy "$@";;
+                apk)     ascii && sudo apk add "$@";;
+                pkg)     ascii && sudo pkg install -y "$@";;
+                pkg_add) ascii && sudo pkg_add -v "$@";;
             esac
             ;;
         -r)
             shift
             case "$_PM" in
-                pacman) ascii && sudo pacman -R --noconfirm "$@";;
-                apt)    ascii && sudo apt remove -y "$@";;
-                dnf)    ascii && sudo dnf remove -y "$@";;
-                zypper) ascii && sudo zypper remove -y "$@";;
-                brew)   ascii && brew uninstall "$@";;
-                xbps)   ascii && sudo xbps-remove -Ry "$@";;
-                apk)    ascii && sudo apk del "$@";;
-                pkg)    ascii && sudo pkg delete -y "$@";;
-                pkg_add)ascii && sudo pkg_delete -v "$@";;
+                pacman)  ascii && sudo pacman -R --noconfirm "$@";;
+                apt)     ascii && sudo apt remove -y "$@";;
+                dnf)     ascii && sudo dnf remove -y "$@";;
+                zypper)  ascii && sudo zypper remove -y "$@";;
+                brew)    ascii && brew uninstall "$@";;
+                xbps)    ascii && sudo xbps-remove -Ry "$@";;
+                apk)     ascii && sudo apk del "$@";;
+                pkg)     ascii && sudo pkg delete -y "$@";;
+                pkg_add) ascii && sudo pkg_delete -v "$@";;
             esac
             ;;
         -u)
             case "$_PM" in
-                pacman) ascii && sudo pacman -Syu --noconfirm;;
-                apt)    ascii && sudo apt update && sudo apt upgrade -y;;
-                dnf)    ascii && sudo dnf upgrade -y;;
-                zypper) ascii && sudo zypper update -y;;
-                brew)   ascii && brew update && brew upgrade;;
-                xbps)   ascii && sudo xbps-install -Syu -y;;
-                apk)    ascii && sudo apk upgrade -a;;
-                pkg)    ascii && sudo pkg upgrade -y;;
-                pkg_add)ascii && sudo pkg upgrade -y;;
+                pacman)  ascii && sudo pacman -Syu --noconfirm;;
+                apt)     ascii && sudo apt update && sudo apt upgrade -y;;
+                dnf)     ascii && sudo dnf upgrade -y;;
+                zypper)  ascii && sudo zypper update -y;;
+                brew)    ascii && brew update && brew upgrade;;
+                xbps)    ascii && sudo xbps-install -Syu -y;;
+                apk)     ascii && sudo apk upgrade -a;;
+                pkg)     ascii && sudo pkg upgrade -y;;
+                pkg_add) ascii && sudo pkg upgrade -y;;
             esac
             ;;
         -s)
             shift
             case "$_PM" in
-                pacman) ascii && pacman -Ss "$@";;
-                apt)    ascii && apt search "$@";;
-                dnf)    ascii && dnf search "$@";;
-                zypper) ascii && zypper search "$@";;
-                brew)   ascii && brew search "$@";;
-                xbps)   ascii && sudo xbps-search "$@";;
-                apk)    ascii && sudo apk search "$@";;
-                pkg)    ascii && sudo pkg search "$@";;
-                pkg_add)ascii && sudo pkg_search "$@";;
+                pacman)  ascii && pacman -Ss "$@";;
+                apt)     ascii && apt search "$@";;
+                dnf)     ascii && dnf search "$@";;
+                zypper)  ascii && zypper search "$@";;
+                brew)    ascii && brew search "$@";;
+                xbps)    ascii && sudo xbps-search "$@";;
+                apk)     ascii && sudo apk search "$@";;
+                pkg)     ascii && sudo pkg search "$@";;
+                pkg_add) ascii && sudo pkg_search "$@";;
             esac
             ;;
         -ai)
