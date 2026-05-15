@@ -15,6 +15,14 @@ BACKUP="$HOME/.zshrc.bak"
         _PM="zypper"
     elif command -v brew &>/dev/null; then
         _PM="brew"
+    elif command -v xbps-install &>/dev/null; then
+        _PM="xbps"
+    elif command -v apk &>/dev/null; then
+        _PM="apk"
+    elif command -v pkg &>/dev/null; then
+        _PM="pkg"
+    elif command -v pkg_add &>/dev/null; then
+        _PM="pkg_add"
     else
         echo "p: no supported package manager found."
         exit 1
@@ -30,21 +38,32 @@ fi
 if ! command -v fastfetch &>/dev/null; then
     echo "==> Installing requirements..."
     if [ "$_PM" = "pacman" ]; then
-        sudo pacman -S fastfetch zsh flatpak git
+        sudo pacman -S fastfetch zsh flatpak 
     fi
     if [ "$_PM" = "apt" ]; then
-        sudo apt install fastfetch zsh flatpak git
+        sudo apt install fastfetch zsh flatpak
     fi
     if [ "$_PM" = "dnf" ]; then
-        sudo dnf install fastfetch zsh flatpak git
+        sudo dnf install fastfetch zsh flatpak
     fi
     if [ "$_PM" = "zypper" ]; then
-        sudo zypper install fastfetch zsh flatpak git
+        sudo zypper install fastfetch zsh flatpak
     fi
     if [ "$_PM" = "brew" ]; then
-        brew install fastfetch zsh flatpak git
+        brew install fastfetch zsh flatpak
     fi
-    
+    if [ "$_PM" = "xbps" ]; then
+        sudo xbps-install -S fastfetch zsh flatpak
+    fi
+    if [ "$_PM" = "apk" ]; then
+        sudo apk add fastfetch zsh flatpak
+    fi
+    if [ "$_PM" = "pkg" ]; then
+        sudo pkg install -y fastfetch zsh flatpak
+    fi
+    if [ "$_PM" = "pkg_add" ]; then
+        sudo pkg_add -v fastfetch zsh flatpak
+    fi
 fi
 if [ -d "$REPO_DIR/.git" ]; then
     echo "==> Found existing install at $REPO_DIR, pulling latest..."
@@ -82,6 +101,18 @@ elif [ "$_PM" = "zypper" ]; then
     sudo chmod 440 /etc/sudoers.d/p-package-manager
 elif [ "$_PM" = "brew" ]; then
     :
+elif [ "$_PM" = "xbps" ]; then
+    echo "$USER ALL=(ALL) NOPASSWD: /usr/bin/xbps-install" | sudo tee /etc/sudoers.d/p-package-manager
+    sudo chmod 440 /etc/sudoers.d/p-package-manager
+elif [ "$_PM" = "apk" ]; then
+    echo "$USER ALL=(ALL) NOPASSWD: /usr/bin/apk" | sudo tee /etc/sudoers.d/p-package-manager
+    sudo chmod 440 /etc/sudoers.d/p-package-manager
+elif [ "$_PM" = "pkg" ]; then
+    echo "$USER ALL=(ALL) NOPASSWD: /usr/bin/pkg" | sudo tee /etc/sudoers.d/p-package-manager
+    sudo chmod 440 /etc/sudoers.d/p-package-manager
+elif [ "$_PM" = "pkg_add" ]; then
+    echo "$USER ALL=(ALL) NOPASSWD: /usr/sbin/pkg_add" | sudo tee /etc/sudoers.d/p-package-manager
+    sudo chmod 440 /etc/sudoers.d/p-package-manager
 fi
 
 echo ""
