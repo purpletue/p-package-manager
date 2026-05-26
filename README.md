@@ -1,4 +1,4 @@
-# P — Package Manager Wrapper for Linux
+# P — Package Manager Wrapper for Linux/BSD/macOS
 
 `p` is a minimal zsh function that wraps `pacman`, `apt`, `dnf`, `zypper`, `brew` and more into a single, fast command. No more typing `sudo pacman -S` or forgetting flags — just `p`.
 
