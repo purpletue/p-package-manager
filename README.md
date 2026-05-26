@@ -6,7 +6,7 @@
 
 ## Supported systems
 
-- apt/Debian, dnf/RHEL, zypper/openSUSE, and homebrew/MacOS systems.
+- apt/Debian, dnf/RHEL, zypper/openSUSE, homebrew/MacOS systems, pacman/Arch based systems, xbps/Void, pkg/FreeBSD, pkg-add/OpenBSD, and apk/Alpine systems.
 
 ---
 
@@ -23,7 +23,7 @@
 
 - Arch, Debian, Fedora, openSUSE, or MacOS systems.
 - `zsh` as your shell.
-- `pacman`, `apt`, `dnf`, `zypper` or `brew`
+- `pacman`, `apt`, `dnf`, `zypper`, `xbps`, `apk`, `pkg`, `pkg-add` or `brew`
 - `yay` — only required for `-ai/ar/as` (AUR related commands).
 
 ---
