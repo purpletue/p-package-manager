@@ -3,6 +3,9 @@
 `p` is a minimal zsh function that wraps `pacman`, `apt`, `dnf`, `zypper`, `brew` and more into a single, fast command. No more typing `sudo pacman -S` or forgetting flags — just `p`.
 
 ---
+## Official website:
+purpletuesdayofficial-blip.github.io/p-package-manager
+---
 
 ## Supported systems
 
