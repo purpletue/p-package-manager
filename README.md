@@ -1,6 +1,6 @@
 # P — Package Manager Wrapper for Linux
 
-`p` is a minimal zsh function that wraps `pacman`, `apt`, `dnf`, `zypper` and `brew` into a single, fast command. No more typing `sudo pacman -S` or forgetting flags — just `p`.
+`p` is a minimal zsh function that wraps `pacman`, `apt`, `dnf`, `zypper`, `brew` and more into a single, fast command. No more typing `sudo pacman -S` or forgetting flags — just `p`.
 
 ---
 
@@ -21,7 +21,7 @@
 
 ## Requirements
 
-- Arch, Debian, Fedora, openSUSE, or MacOS systems.
+- Arch, Debian, Fedora, openSUSE,macOS,Void,Alpine, FreeBSD,or OpenBSD 
 - `zsh` as your shell.
 - `pacman`, `apt`, `dnf`, `zypper`, `xbps`, `apk`, `pkg`, `pkg-add` or `brew`
 - `yay` — only required for `-ai/ar/as` (AUR related commands).
@@ -85,7 +85,7 @@ p -i neovim            # Install neovim
 p -r firefox           # Remove firefox
 p -u                   # Full system update
 p -s htop              # Search for htop
-p -ai vesktop           # Install vesktop from AUR
+p -ai vesktop           # Install vesktop from AUR/Cask
 p -h                   # Show help
 ```
 
