@@ -4,7 +4,9 @@
 
 ---
 ## Official website:
-purpletuesdayofficial-blip.github.io/p-package-manager
+
+[purpletuesdayofficial-blip.github.io/p-package-manager](purpletuesdayofficial-blip.github.io/p-package-manager)
+
 ---
 
 ## Supported systems
