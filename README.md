@@ -51,7 +51,7 @@ bash install.sh
 
 The installer will back up your existing `.zshrc` and replace it with the one from this repo.
 
-### Manual
+### Manual (if you don't want a brand new `.zshrc`)
 
 Copy the `p()` function from `.zshrc` into your own `~/.zshrc`, then run:
 
