@@ -53,7 +53,7 @@ The installer will back up your existing `.zshrc` and replace it with the one fr
 
 ### Manual (if you don't want a brand new `.zshrc`)
 
-Copy the `p()` function from `.zshrc` into your own `~/.zshrc`, then run:
+Copy the `p()` and `ascii()` functions from `.zshrc` into your own `~/.zshrc`, then run:
 
 ```bash
 source ~/.zshrc
