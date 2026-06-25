@@ -5,7 +5,7 @@
 ---
 ## Official website:
 
-[purpletuesdayofficial-blip.github.io/p-package-manager](https://purpletuesdayofficial-blip.github.io/p-package-manager)
+[purpletue.github.io/p-package-manager](https://purpletue.github.io/p-package-manager)
 
 ---
 
