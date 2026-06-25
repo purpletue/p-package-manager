@@ -30,39 +30,34 @@ BACKUP="$HOME/.zshrc.bak"
 
 echo "==> p package manager installer"
 
-if ! command -v git &>/dev/null; then
-    echo "Error: git is not installed. Please install it first."
-    exit 1
-fi
-
 if ! command -v fastfetch &>/dev/null; then
     echo "==> Installing requirements..."
     if [ "$_PM" = "pacman" ]; then
-        sudo pacman -S fastfetch zsh flatpak 
+        sudo pacman -S fastfetch zsh flatpak git
     fi
     if [ "$_PM" = "apt" ]; then
-        sudo apt install fastfetch zsh flatpak
+        sudo apt install fastfetch zsh flatpak git
     fi
     if [ "$_PM" = "dnf" ]; then
-        sudo dnf install fastfetch zsh flatpak
+        sudo dnf install fastfetch zsh flatpak git
     fi
     if [ "$_PM" = "zypper" ]; then
-        sudo zypper install fastfetch zsh flatpak
+        sudo zypper install fastfetch zsh flatpak git
     fi
     if [ "$_PM" = "brew" ]; then
-        brew install fastfetch zsh flatpak
+        brew install fastfetch zsh flatpak git
     fi
     if [ "$_PM" = "xbps" ]; then
-        sudo xbps-install -S fastfetch zsh flatpak
+        sudo xbps-install -S fastfetch zsh flatpak git
     fi
     if [ "$_PM" = "apk" ]; then
-        sudo apk add fastfetch zsh flatpak
+        sudo apk add fastfetch zsh flatpak git
     fi
     if [ "$_PM" = "pkg" ]; then
-        sudo pkg install -y fastfetch zsh flatpak
+        sudo pkg install -y fastfetch zsh flatpak git
     fi
     if [ "$_PM" = "pkg_add" ]; then
-        sudo pkg_add -v fastfetch zsh flatpak
+        sudo pkg_add -v fastfetch zsh flatpak git
     fi
 fi
 if [ -d "$REPO_DIR/.git" ]; then
@@ -115,9 +110,9 @@ elif [ "$_PM" = "pkg_add" ]; then
     sudo chmod 440 /etc/sudoers.d/p-package-manager
 fi
 
-echo ""
+echo "\n"
 echo "Done! Thank you for installing my wrapper! And ignore the errors, thats normal!"
-echo ""
+echo "\n"
 echo "Quick reference:"
 echo "  p -i <pkg>   install"
 echo "  p -r <pkg>   remove"
