@@ -260,11 +260,14 @@
     .desc { color: var(--text); font-family: 'Syne', sans-serif; font-size: 0.95rem; }
 
     /* hide/show per distro */
-    .cmd-arch, .cmd-apt, .cmd-dnf, .cmd-zypper, .cmd-brew { display: none; }
+    .cmd-arch, .cmd-apt, .cmd-dnf, .cmd-zypper, .cmd-brew .cmd-pkg .cmd-pkg_add .cmd-apk { display: none; }
     [data-distro="arch"] .cmd-arch,
     [data-distro="apt"]  .cmd-apt,
     [data-distro="dnf"]  .cmd-dnf,
     [data-distro="zypper"] .cmd-zypper,
+    [data-distro="pkg"] .cmd-pkg,
+    [data-distro="pkg_add"] .cmd-pkg_add,
+    [data-distro="apk"] .cmd-apk,
     [data-distro="brew"] .cmd-brew { display: block; }
 
     .examples-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
@@ -424,7 +427,7 @@
 </nav>
 
 <div class="hero">
-  <div class="hero-tag">// arch · debian · fedora · opensuse · macos · flatpak · zsh</div>
+  <div class="hero-tag">// arch · debian · fedora · opensuse · macos · void · freebsd · openbsd · alpine · flatpak · zsh</div>
   <h1><span>p</span><br>package<br>manager.</h1>
   <p class="hero-sub">A minimal zsh wrapper that speaks every package manager. One letter. No bloat. No nonsense — whatever distro you're on.</p>
   <div class="install-box">
@@ -435,9 +438,12 @@
   <div class="hero-badges">
     <span class="badge blue">Arch / Manjaro</span>
     <span class="badge blue">Debian / Ubuntu</span>
-    <span class="badge blue">Fedora</span>
-    <span class="badge blue">openSUSE</span>
-    <span class="badge blue">macOS</span>
+    <span class="badge blue">Fedora / RHEL</span>
+    <span class="badge blue">SUSE / openSUSE</span>
+    <span class="badge blue">Homebrew / macOS</span>
+    <span class="badge blue">pkg / FreeBSD</span>
+    <span class="badge blue">pkg_add / OpenBSD</span>
+    <span class="badge blue">apk / Alpine</span>
     <span class="badge orange">Flatpak</span>
     <span class="badge purple">zsh</span>
     <span class="badge green">GPL v3</span>
@@ -455,6 +461,9 @@
     <button class="distro-tab" onclick="setDistro('dnf', this)">Fedora (dnf)</button>
     <button class="distro-tab" onclick="setDistro('zypper', this)">openSUSE (zypper)</button>
     <button class="distro-tab" onclick="setDistro('brew', this)">macOS (brew)</button>
+    <button class="distro-tab" onclick="setDistro('pkg', this)">FreeBSD (pkg)</button>
+    <button class="distro-tab" onclick="setDistro('pkg_add', this)">OpenBSD (pkg_add)</button>
+    <button class="distro-tab" onclick="setDistro('apk', this)">Alpine (apk)</button>
   </div>
 
   <div id="docs-body" data-distro="arch">
@@ -473,6 +482,9 @@
             <span class="cmd cmd-dnf">sudo dnf install -y</span>
             <span class="cmd cmd-zypper">sudo zypper install -y</span>
             <span class="cmd cmd-brew">brew install</span>
+            <span class="cmd cmd-pkg">pkg install -y</span>
+            <span class="cmd cmd-pkg_add">pkg_add -I</span>
+            <span class="cmd cmd-apk">apk add --no-interactive</span>
           </td>
         </tr>
         <tr>
@@ -484,6 +496,9 @@
             <span class="cmd cmd-dnf">sudo dnf remove -y</span>
             <span class="cmd cmd-zypper">sudo zypper remove -y</span>
             <span class="cmd cmd-brew">brew uninstall</span>
+            <span class="cmd cmd-pkg">pkg delete -y</span>
+            <span class="cmd cmd-pkg_add">pkg_delete -I</span>
+            <span class="cmd cmd-apk">apk del --no-interactive</span>
           </td>
         </tr>
         <tr>
@@ -495,6 +510,9 @@
             <span class="cmd cmd-dnf">sudo dnf upgrade -y</span>
             <span class="cmd cmd-zypper">sudo zypper update -y</span>
             <span class="cmd cmd-brew">brew update && brew upgrade</span>
+            <span class="cmd cmd-pkg">pkg update && pkg upgrade -y</span>
+            <span class="cmd cmd-pkg_add">sysupgrade && sysmerge && pkg_add -u</span>
+            <span class="cmd cmd-apk">apk update && apk upgrade -I</span>
           </td>
         </tr>
         <tr>
